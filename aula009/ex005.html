@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            color: aliceblue;
+            font: normal 18px Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>inicindo estudos DOM</h1>
+    <p>Eu sou p1</p><!--red-->
+    <p><strong>Eu </strong>sou p2</p>
+    <div id="id2">acessando a div pelo DOM</div>
+    <span name = 'selectName'>Selecionando por Name</span>
+    <h3 class="meuH3" >Usando queryselector</h3>
+    <br><br><br>
+
+    <script>
+
+        var p1 = document.getElementsByTagName("p")[0];//selecionando o primeiro paragrafo
+        var corpo = document.body;//criando uma variavel para acessar o body
+        var p2 = document.getElementsByTagName('p')[1];
+        var usandoId = document.getElementById("id2");
+        var usandoName = document.getElementsByName('selectName')[0];
+        var usandoQuerySelector = document.querySelector('h3.meuH3');
+
+        corpo.style.background = 'gray';//alterando a cor do body
+        p1.style.color = 'red';//alterando a cor do p1 atravez do DOM
+        document.writeln('acesando o p1: ' + p1.innerText + '<br>');//innerText escreve oque esta em p1
+        document.write('acessando p2: ' + p2.innerHTML + '<br>');//usando innerHTML o elemento vai formatado
+        document.writeln('acessando id2 ' + usandoId.innerText);
+        usandoId.innerText = 'conteudo de texto modificado via DOM'//modificando o texto
+        document.writeln(`<br> usando o elemento Name, ${usandoName.innerText}`)//usando elemento name
+        document.writeln(`<br> melhor forma de acessar o DOM, ${usandoQuerySelector.innerText}`)
+
+    </script>
+</body>
+</html>
