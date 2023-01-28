@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando valores</title>
+</head>
+
+<body>
+    <style>
+        #botao {
+            display: flex;
+            margin-top: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: grey;
+            padding: 6px 10px;
+            font-weight: bold;
+            color: aliceblue;
+        }
+    </style>
+    <h1>Somando Valores:</h1>
+    <div id="conteiner">
+        <form action="soma">
+            <input type="number" name="num01" id="num01" required> +
+            <input type="number" name="num02" id="num02" required>
+            <input type="button" value="Somar" id="botao" onclick="somar()">
+        </form>
+    </div>
+    <h3 id="result">Resultado:</h3>
+
+    <script>
+        function somar() {
+            const numero01 = document.querySelector("#num01")
+            const numero02 = document.querySelector("#num02")
+            const Resultado = document.querySelector("#result")
+            const valorNumero01 = Number(numero01.value)
+            const valorNumero02 = Number(numero02.value)
+            const soma = valorNumero01 + valorNumero02
+            Resultado.innerHTML = `Resultado = ${soma}`
+        }
+    </script>
+</body>
+
+</html>
